@@ -1,0 +1,36 @@
+.container {
+  max-width: 480px;
+}
+
+body {
+  padding-bottom: 100px !important;
+}
+
+/* style.css */
+.chat-container {
+  height: 240px;
+  overflow-y: auto; /* これにより、コンテンツが高さを超えたときにスクロールバーが表示されます */
+  margin-bottom: 10px; /* 必要に応じてマージンを設定 */
+}
+
+.chat-container .card-body {
+  padding: 10px; /* カード内のパディングを設定 */
+}
+
+.scrollable-content {
+  max-height: 300px; /* コンテンツエリアの最大高さ */
+  overflow-y: auto; /* 縦方向のスクロールバーを必要に応じて表示 */
+}
+
+@keyframes fadeOutEffect {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.fading-out {
+  animation: fadeOutEffect 1s ease-in-out forwards;
+}

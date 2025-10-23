@@ -1,12 +1,48 @@
 .container {
-  width: 100%;
+  width: 100%; */
   max-width: 1280px;
 }
+/* === Font Settings === */
+  h1 {
+    font-size: 1.8rem; /* 好みのサイズに調整してください */
+  }
+  
+/* 英文（ロゴ・英語タイトルなど）を明示的にRobotoへ */
+.en,
+h1, h2, h3, h4, h5, h6,
+.card-title {
+  font-family: "Roboto", "BNoto Sans Japanese", sans-serif;
+  /* font-weight: 500; */
+  font-weight: 500;
+  line-height: 1.5;
+  color: #222;
+}
+ p {
+    font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Meiryo", "sans-serif";
+    font-size: 14px;
+    color: #222;
+    margin-bottom: 2em;
+    line-height: 1.7;
+  }
+
 .icon {
   font-size: 22px;
-  fill: #000 !important;
+  fill: #333 !important;
 }
 
 /* .icon:hover {
   fill: #999 !important;
 } */
+
+/* gridのカード画像を“確実に”カラム幅に合わせる */
+.container .row .col .card .card-img-top {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* カード自体が横幅に従って自然に縮むように */
+.container .row .col .card {
+  max-width: 100%;
+  height: auto;
+}

@@ -1,0 +1,9 @@
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{{ if .IsHome }}くるくるぼっち{{ else }}{{ .Title }} | くるくるぼっち{{ end }}</title>
+
+  {{ partial "meta.html" . }}
+  {{ partial "styles.html" . }}
+  {{ partial "scripts_head.html" . }}
+</head>

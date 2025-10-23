@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css"
+    />
+    <link rel="stylesheet" href="./e-style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <style>
+      tr .bi-clipboard {
+        display: none;
+      }
+      tr:hover .bi-clipboard {
+        display: inline;
+      }
+    </style>
+    <title>Cipher Generator</title>
+  </head>
+  <body>
+    <section class="container" id="app">
+      <section>
+        <nav class="navbar bg-body-tertiary mb-3">
+          <div class="container-fluid">
+            <span class="navbar-brand mb-0 h1"
+              ><i class="bi bi-robot me-1"></i>Cipher  Generator</span
+            >
+          </div>
+        </nav>
+        <div class="mb-3">
+          <ul class="nav nav-tabs">
+            <li class="nav-item" v-for="item in modes" :key="item.key">
+              <a
+                class="nav-link"
+                :class="{'active': item.key == mode}"
+                aria-current="page"
+                :href="`#${item.key}`"
+                @click.prevent="mode = item.key"
+                >{{item.name}}</a
+              >
+            </li>
+          </ul>
+        </div>
+        <section class="mb-3">
+          <h2 class="h5 d-flex justify-content-between">
+            Message
+            <i
+              class="bi bi-trash small text-danger"
+              @click="message=''"
+              v-if="message.length"
+            ></i>
+          </h2>
+          <textarea
+            v-model="message"
+            class="form-control"
+            aria-label="message"
+            rows="4"
+            placeholder="Write here"
+          ></textarea>
+        </section>
+        <section class="mb-3" v-if="mode == 'vigenere' || mode == 'playfair'">
+          <h2 class="h5 d-flex justify-content-between">
+            Key
+            <i
+              class="bi bi-trash small text-danger"
+              @click="key=''"
+              v-if="key.length"
+            ></i>
+          </h2>
+          <input
+            type="text"
+            pattern="[a-z]"
+            v-model="key"
+            class="form-control"
+            placeholder="only A-Z"
+          />
+        </section>
+        <section class="mb-3" v-if="mode == 'transposition'">
+          <h2 class="h5 d-flex justify-content-between" for="numRails">
+            Number of Rails
+          </h2>
+          <input
+            type="number"
+            min="2"
+            class="form-control"
+            v-model="num_rails"
+            placeholder="Number of rails"
+          />
+        </section>
+
+        <section class="mb-3" v-if="message.length">
+          <h2 class="h5">Reuslts</h2>
+          <!-- ボタン -->
+          <div class="mb-3">
+            <div
+              class="btn-group"
+              role="group"
+              aria-label="Basic radio toggle button group"
+            >
+              <input
+                type="radio"
+                class="btn-check"
+                name="encrypt"
+                id="inlineRadio1"
+                value="1"
+                v-model="encrypt"
+              />
+              <label class="btn btn-outline-dark" for="inlineRadio1"
+                >Encrypt</label
+              >
+
+              <input
+                type="radio"
+                class="btn-check"
+                name="inlineRadioOptions"
+                id="inlineRadio3"
+                value="0"
+                v-model="encrypt"
+              />
+              <label class="btn btn-outline-dark" for="inlineRadio3"
+                >Decrypt</label
+              >
+            </div>
+          </div>
+          <template v-if="mode == 'caesar'">
+            <!-- アラート -->
+            <div
+              class="alert alert-light"
+              role="alert"
+              v-if="english_message && encrypt"
+            >
+              <a
+                :href="`https://translate.google.co.jp/?hl=ja&sl=en&tl=ja&text=${english_message}`"
+                target="_blank"
+                >{{english_message}}</a
+              >
+            </div>
+            <!-- アラートここまで -->
+            <table class="table-sm table-borderless">
+              <thead>
+                <tr>
+                  <th style="width: 5%">Shift</th>
+                  <th style="width: 95%">Reuslt</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr
+                  v-for="(message, i) in shifted_messages"
+                  :key="i"
+                  :class="{
+          'fw-bold': hasEnglish(message) && !encrypt,
+          'text-secondary': !hasEnglish(message) && !encrypt
+        }"
+                >
+                  <td class="text-end small">{{i+1}}</td>
+                  <td>
+                    {{message}}
+                    <i
+                      class="bi bi-clipboard ms-1"
+                      :class="{'text-dark text-secondary': !encrypt}"
+                      @click="copyToClipboard(message)"
+                    ></i>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </template>
+          <template v-if="mode == 'vigenere'">
+            <div
+              class="alert alert-light"
+              role="alert"
+              v-if="message.length && key.length"
+            >
+              {{vigenereCipher(message, key, encrypt)}}
+              <i
+                class="bi bi-clipboard ms-1"
+                :class="{'text-dark text-secondary': !encrypt}"
+                @click="copyToClipboard(vigenereCipher(message, key, encrypt))"
+              ></i>
+            </div>
+          </template>
+          <template v-if="mode == 'transposition'">
+            <div class="alert alert-light" role="alert" v-if="message.length">
+              {{transpositionCipher(message, num_rails, encrypt)}}
+              <i
+                class="bi bi-clipboard ms-1"
+                :class="{'text-dark text-secondary': !encrypt}"
+                @click="copyToClipboard(transpositionCipher(message, num_rails, encrypt))"
+              ></i>
+            </div>
+          </template>
+          <template v-if="mode == 'playfair'">
+            <div
+              class="alert alert-light"
+              role="alert"
+              v-if="message.length && key.length"
+            >
+              {{playfairCipher(message, key, encrypt)}}
+              <i
+                class="bi bi-clipboard ms-1"
+                :class="{'text-dark text-secondary': !encrypt}"
+                @click="copyToClipboard(playfairCipher(message, key, encrypt))"
+              ></i>
+            </div>
+          </template>
+        </section>
+      </section>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="codec.js"></script>
+  </body>
+</html>
