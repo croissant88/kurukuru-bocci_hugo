@@ -1,0 +1,42 @@
+{{ define "main" }}
+<section class="text-center container bg-light p-3">
+  <!-- ナビ -->
+  <nav class="navbar navbar-expand-lg">
+    <div class="container-fluid justify-content-center">
+      <a class="navbar-brand" href="{{ "/" | relURL }}">
+        <img src="{{ "brand/logo.svg" | relURL }}" alt="くるくるぼっち" height="48" class="d-inline-block align-text-top" />
+      </a>
+    </div>
+  </nav>
+
+  <!-- コンテンツ -->
+  <div class="container mt-5">
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+      {{ range .Site.Data.cards }}
+      <div class="col">
+        <div class="card h-100">
+          <a href="{{ .url }}" target="_blank">
+            <img src="{{ .image | relURL }}" class="card-img-top" alt="{{ .title }}">
+          </a>
+          <div class="card-body">
+            <h5 class="card-title">{{ .title }}</h5>
+            <p class="card-text">{{ .text }}</p>
+          </div>
+        </div>
+      </div>
+      {{ end }}
+    </div>
+
+    <!-- SNS -->
+    <div class="d-flex justify-content-center align-items-center mt-3">
+      <div class="mx-2"><a href="https://twitter.com/kurukuruiroha" target="_blank"><i class="bi bi-twitter icon"></i></a></div>
+      <div class="mx-2"><a href="https://www.instagram.com/kurukuru_bocci/" target="_blank"><i class="bi bi-instagram icon"></i></a></div>
+      <div class="mx-2"><a href="https://www.youtube.com/c/%E3%81%8F%E3%82%8B%E3%81%8F%E3%82%8B%E3%81%BC%E3%81%A3%E3%81%A1" target="_blank"><i class="bi bi-youtube icon"></i></a></div>
+    </div>
+  </div>
+
+  <footer class="text-center mt-5 py-2">
+    <p class="mb-0 mt-3 small">&copy; くるくるぼっち</p>
+  </footer>
+</section>
+{{ end }}

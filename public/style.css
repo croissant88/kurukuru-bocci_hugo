@@ -1,0 +1,12 @@
+.container {
+  width: 100%;
+  max-width: 1280px;
+}
+.icon {
+  font-size: 22px;
+  fill: #000 !important;
+}
+
+/* .icon:hover {
+  fill: #999 !important;
+} */

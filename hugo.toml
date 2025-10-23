@@ -1,0 +1,4 @@
+baseURL = "https://kurukuru-bocci.com/"
+languageCode = "ja"
+title = "くるくるぼっち"
+enableRobotsTXT = true
