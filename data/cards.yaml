@@ -29,12 +29,12 @@
   text: "Welcome to the world of NFT art."
 
 - title: "flutty"
-  url: "https://kurukuru-bocci/fluffy/"
+  url: "/fluffy/"
   image: "img/flutty.webp"
   text: "音声を文字にできるシンプルツール「Fluffy」リアルタイムでの会話を、かんたんにテキスト化できます。"
 
 - title: "Cipher Generator"
-  url: "https://kurukuru-bocci/cipher/"
+  url: "/cipher/"
   image: "img/cipher.webp"
   text: "いろんな種類の暗号を、かんたんに作れるジェネレーターです。 文字を入力するだけで、自動で暗号化してくれます"
 
