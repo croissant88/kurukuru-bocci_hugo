@@ -1,0 +1,18 @@
+{{ define "main" }}
+<main class="page-content container">
+  {{ if eq .Slug "scenario" }}
+  <style>
+    .page-content .prose {
+      max-width: 680px;       /* ←少し細くする場合 */
+      margin: 3rem auto;      /* 上下もゆったり中央寄せ */
+      line-height: 1.9;       /* 行間をさらに広めに */
+      font-size: 1.05rem;     
+    }
+  </style>
+  {{ end }}
+
+  <article class="prose mx-auto my-12">
+    {{ .Content }}
+  </article>
+</main>
+{{ end }}

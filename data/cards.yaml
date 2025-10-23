@@ -14,7 +14,7 @@
   text: "数字をスライドさせて同じ数字を組み合わせ、2048のタイルを作る楽しいパズルゲーム!"
 
 - title: "シナリオ"
-  url: "#"
+  url: "/scenario"
   image: "img/screenwriting.webp"
   text: "脚本を書いています。"
 

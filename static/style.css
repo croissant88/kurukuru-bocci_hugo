@@ -2,33 +2,68 @@
   width: 100%; */
   max-width: 1280px;
 }
-/* === Font Settings === */
-  h1 {
-    font-size: 1.8rem; /* 好みのサイズに調整してください */
-  }
-  
-/* 英文（ロゴ・英語タイトルなど）を明示的にRobotoへ */
-.en,
-h1, h2, h3, h4, h5, h6,
-.card-title {
-  font-family: "Roboto", "BNoto Sans Japanese", sans-serif;
-  /* font-weight: 500; */
-  font-weight: 500;
-  line-height: 1.5;
+
+/* ======== 全体のフォント統一設定 ======== */
+
+/* 本文（p, liなど） */
+body, p, li, span, a {
+  font-family: 
+    "Inter",           /* 英語・数字に強く見やすい */
+    "Roboto",
+    "Noto Sans JP",    /* 日本語用：線が細く、英語とバランスが良い */
+    "Hiragino Sans",
+    "Hiragino Kaku Gothic ProN",
+    "Meiryo",
+    sans-serif;
+  font-weight: 450;     /* 英語400、日本語500の中間くらいを狙う */
+  font-feature-settings: "palt"; /* 和文のプロポーショナル詰め */
   color: #222;
+  line-height: 1.7;
+  letter-spacing: 0.01em;
+  font-size: 14px;
 }
- p {
-    font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Meiryo", "sans-serif";
-    font-size: 14px;
-    color: #222;
-    margin-bottom: 2em;
-    line-height: 1.7;
-  }
+
+/* 見出し（h1〜h6） */
+h1, h2, h3, h4, h5, h6 {
+  font-family:
+    "Inter",
+    "Roboto",
+    "Noto Sans JP",
+    "Hiragino Sans",
+    "Hiragino Kaku Gothic ProN",
+    "Meiryo",
+    sans-serif;
+  font-weight: 550;    /* 強すぎない自然な太さ */
+  line-height: 1.4;
+  color: #111;
+  letter-spacing: 0.01em;
+}
+
+/* 英語タイトルやロゴで英字だけ使いたい場合 */
+/* .en {
+  font-family: "Inter", "Roboto", sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+} */
+
+/* 強調テキスト */
+strong, b {
+  font-weight: 600;
+}
 
 .icon {
   font-size: 22px;
   fill: #333 !important;
 }
+
+ /* h3 {
+    position: relative;
+    font-size: 1.3em;
+    text-align: start;
+    letter-spacing: 0.05em;
+    font-weight: bold;
+  } */
+
 
 /* .icon:hover {
   fill: #999 !important;
