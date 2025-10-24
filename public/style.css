@@ -91,3 +91,28 @@ strong, b {
 /* 見出しや本文の行間を少しゆったり（好みで） */
 .lead { font-size: 1.15rem; }
 .lh-lg { line-height: 1.9; }
+
+hr {
+  border: none;
+  border-top: 1.5px solid rgba(0,0,0,0.15);
+  margin: 2.8rem auto;
+  width: 100%;
+}
+
+.breadcrumb {
+  background-color: transparent;
+  font-size: 0.95rem;
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+  color: #aaa; /* 区切り矢印の色 */
+}
+
+.breadcrumb a {
+  color: #555;
+}
+
+.breadcrumb a:hover {
+  text-decoration: underline;
+  color: #000;
+}

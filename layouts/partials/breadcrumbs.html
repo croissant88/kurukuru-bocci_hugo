@@ -1,0 +1,13 @@
+<nav aria-label="breadcrumb" class="my-4">
+  <ol class="breadcrumb bg-transparent mb-0">
+    <li class="breadcrumb-item">
+      <a href="{{ "/" | relURL }}">ホーム</a>
+    </li>
+
+    {{ if .IsPage }}
+      <li class="breadcrumb-item active" aria-current="page">{{ .Title }}</li>
+    {{ else if .IsSection }}
+      <li class="breadcrumb-item active" aria-current="page">{{ .Title }}</li>
+    {{ end }}
+  </ol>
+</nav>

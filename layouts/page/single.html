@@ -1,12 +1,13 @@
 {{ define "main" }}
+{{ partial "breadcrumbs.html" . }}
 <main class="page-content container">
   {{ if in (slice "scenario" "about") .Slug }}
   <style>
     .page-content .prose{
-      max-width: 720px;
+      max-width: 680px;
       margin: 3rem auto;
       line-height: 1.8;
-      font-size: 1.05rem;
+      font-size: 1rem;
     }
   </style>
   {{ end }}

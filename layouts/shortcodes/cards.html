@@ -3,7 +3,8 @@
     {{ range site.Data.cards }}
       <div class="col">
         <div class="card h-100">
-          <a href="{{ .url }}" target="_blank" rel="noopener">
+          {{ $isExternal := strings.HasPrefix .url "http" }}
+          <a href="{{ .url }}" {{ if $isExternal }}target="_blank" rel="noopener"{{ end }}>
             <img src="{{ .image | relURL }}" class="card-img-top" alt="{{ .title }}">
           </a>
           <div class="card-body">
