@@ -1,3 +1,8 @@
+- title: "シナリオ"
+  url: "/scenario"
+  image: "img/screenwriting.webp"
+  text: "脚本を書いています。"
+
 - title: "くるくるぼっち"
   url: "https://www.youtube.com/c/%E3%81%8F%E3%82%8B%E3%81%8F%E3%82%8B%E3%81%BC%E3%81%A3%E3%81%A1"
   image: "img/youtube.gif"
@@ -12,11 +17,6 @@
   url: "https://cubequest.site/game/2048/"
   image: "img/2048.webp"
   text: "数字をスライドさせて同じ数字を組み合わせ、2048のタイルを作る楽しいパズルゲーム!"
-
-- title: "シナリオ"
-  url: "/scenario"
-  image: "img/screenwriting.webp"
-  text: "脚本を書いています。"
 
 - title: "まわり道ラジオ"
   url: "https://open.spotify.com/show/6RG5YM9VlcUzQK7uvTKpTb"

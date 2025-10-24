@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>くるくるぼっち</title>
-    <link>http://localhost:49237/</link>
+    <link>http://localhost:1313/</link>
     <description>Recent content on くるくるぼっち</description>
     <generator>Hugo</generator>
     <language>ja</language>
     <lastBuildDate>Thu, 23 Oct 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:49237/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>シナリオ経歴</title>
-      <link>http://localhost:49237/scenario/</link>
+      <link>http://localhost:1313/scenario/</link>
       <pubDate>Thu, 23 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:49237/scenario/</guid>
+      <guid>http://localhost:1313/scenario/</guid>
       <description>シナリオ経歴 これまでに関わった脚本・シナリオ作品の一覧です。&#xA;お問い合わせ：脚本・シナリオのご依頼やご相談は、以下までお気軽にご連絡ください。&#xA;📧 swiu.studio@gmail.com&#xA;ガル学。〜ガールズガーデン〜 テレビ東京〜（2021年）&#xA;ジャンル：学園ドラマ&#xA;役割：5,6,9話を担当&#xA;備考：ヘルプ&#xA;公式サイト：作品ページはこちら&#xA;あの子が生まれる FODオリジナル（2020年）&#xA;ジャンル：ホラー&#xA;役割：脚本&#xA;備考：共同脚本&#xA;公式サイト：作品ページはこちら&#xA;LIGHTHOUSE 自主映画（2021年）&#xA;ジャンル：—&#xA;役割：脚本&#xA;備考：短編作品&#xA;アキラNo.2 映画（2014年）&#xA;ジャンル：学園ドラマ&#xA;役割：脚本&#xA;備考：共同脚本&#xA;公式サイト：作品ページはこちら&#xA;うわこい 映画（2014年）&#xA;ジャンル：ラブロマンス&#xA;役割：脚本&#xA;備考：共同脚本&#xA;公式サイト：作品ページはこちら&#xA;いけない！ルナ先生 DVD（2014年）&#xA;ジャンル：ラブコメディ&#xA;役割：脚本&#xA;備考：共同脚本&#xA;公式サイト：作品ページはこちら</description>
     </item>
   </channel>
