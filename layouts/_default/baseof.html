@@ -1,9 +1,14 @@
 <!DOCTYPE html>
 <html lang="ja">
   {{ partial "head.html" . }}
-  <body>
-    {{ block "main" . }}{{ end }}
-    {{ partial "scripts_body.html" . }}
+  <body class="bg-light">
+    <div class="container p-3">
+
+      {{ block "main" . }}{{ end }}
+
+      {{ partial "scripts_body.html" . }}
       {{ partial "footer.html" . }}
+
+    </div>
   </body>
 </html>

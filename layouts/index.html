@@ -1,5 +1,5 @@
 {{ define "main" }}
-<section class="text-center container bg-light p-3">
+<section class="text-center container p-3">
   <!-- ナビ -->
   <nav class="navbar navbar-expand-lg">
     <div class="container-fluid justify-content-center">
@@ -8,7 +8,11 @@
       </a>
     </div>
   </nav>
-
+<div class="text-center my-3">
+  <a href="/about/" class="fw-bold text-decoration-none border-bottom border-2 border-dark pb-1">
+    About Me
+  </a>
+</div>
   <!-- ここに Markdown（_index.md）の本文を表示 -->
   <div class="container my-5" style="max-width: 800px; text-align: left;">
     {{ .Content }}
