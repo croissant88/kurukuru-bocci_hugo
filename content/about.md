@@ -10,7 +10,7 @@ layout: "single"
 # About Me {.mt-5 .fw-bold .text-center .mb-5}
 
 
-<div class="row align-items-center g-4 my-4 px-4">
+<div class="row align-items-center g-4 my-4">
   <div class="col-12 col-md-4 text-center">
     <img
       src="/img/profile_iroha.png"
@@ -20,7 +20,7 @@ layout: "single"
     />
   </div>
 
-  <div class="col-12 col-md-8 px-5">
+  <div class="col-12 col-md-8">
     <p class="lead fw-semibold mb-2">くるくるぼっちのSAKURAKOです。</p>
     <p class="lh-lg about-intro mb-0">
       脚本・ゲーム・デザイン・アートなど、いろんな形で「物語」や「世界観」をつくっています。
