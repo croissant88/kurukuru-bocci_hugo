@@ -7,20 +7,20 @@
 
 /* 本文（p, liなど） */
 body, p, li, span, a {
-  font-family: 
-    "Inter",           /* 英語・数字に強く見やすい */
+  font-family:
+    "Inter",
     "Roboto",
-    "Noto Sans JP",    /* 日本語用：線が細く、英語とバランスが良い */
+    "Noto Sans JP",
     "Hiragino Sans",
     "Hiragino Kaku Gothic ProN",
     "Meiryo",
     sans-serif;
-  font-weight: 450;     /* 英語400、日本語500の中間くらいを狙う */
-  font-feature-settings: "palt"; /* 和文のプロポーショナル詰め */
+  font-weight: 400; /* ← 通常文は400のほうが自然 */
+  font-feature-settings: "palt";
   color: #222;
-  line-height: 1.7;
-  letter-spacing: 0.01em;
-  font-size: 14px;
+  line-height: 1.8; /* ← 少し広げるとWebでの日本語が読みやすい */
+  letter-spacing: 0.03em; /* ← 日本語フォントは少し広めが美しい */
+  font-size: 15px; /* ← デスクトップでは14pxより15pxが見やすい */
 }
 
 /* 見出し（h1〜h6） */
