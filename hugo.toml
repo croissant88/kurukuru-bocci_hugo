@@ -2,3 +2,6 @@ baseURL = "https://kurukuru-bocci.com/"
 languageCode = "ja"
 title = "くるくるぼっち"
 enableRobotsTXT = true
+[markup]
+  [markup.goldmark.renderer]
+    unsafe = true

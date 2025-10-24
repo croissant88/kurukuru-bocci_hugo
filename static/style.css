@@ -81,3 +81,13 @@ strong, b {
   max-width: 100%;
   height: auto;
 }
+
+/* テキストの行幅を抑えて読みやすくする */
+.about-intro { max-width: 56ch; }          /* PCで行長を制限 */
+@media (max-width: 767.98px) {
+  .about-intro { max-width: 100%; }        /* スマホは全幅でOK */
+}
+
+/* 見出しや本文の行間を少しゆったり（好みで） */
+.lead { font-size: 1.15rem; }
+.lh-lg { line-height: 1.9; }

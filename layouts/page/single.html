@@ -1,12 +1,12 @@
 {{ define "main" }}
 <main class="page-content container">
-  {{ if eq .Slug "scenario" }}
+  {{ if in (slice "scenario" "about") .Slug }}
   <style>
-    .page-content .prose {
-      max-width: 680px;       /* ←少し細くする場合 */
-      margin: 3rem auto;      /* 上下もゆったり中央寄せ */
-      line-height: 1.9;       /* 行間をさらに広めに */
-      font-size: 1.05rem;     
+    .page-content .prose{
+      max-width: 720px;
+      margin: 3rem auto;
+      line-height: 1.8;
+      font-size: 1.05rem;
     }
   </style>
   {{ end }}
